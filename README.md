@@ -56,6 +56,6 @@ Execute the compiled program with one of the following options:
 ```bash
 ./sgemm-tiled <m> <k> <n>
 ```
-`<m>` : Rows in matrix A.
-`<k>` : Columns in matrix A and rows in matrix B.
-`<n>` : Columns in matrix B.
+`<m>` : Rows in matrix A. <br/>
+`<k>` : Columns in matrix A and rows in matrix B. <br/>
+`<n>` : Columns in matrix B. <br/>

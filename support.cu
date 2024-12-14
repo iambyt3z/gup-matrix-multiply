@@ -8,7 +8,6 @@
 void verify
 (float *A, float *B, float *C, unsigned int m, unsigned int k,unsigned int n) 
 {
-
     const float relativeTolerance = 1e-6;
     unsigned int count = 0;
 

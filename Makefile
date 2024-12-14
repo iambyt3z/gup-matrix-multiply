@@ -1,25 +1,20 @@
 NVCC        = nvcc
-
-ifeq (,$(shell which nvprof))
-NVCC_FLAGS  = -O3 -arch=sm_20
-else
-NVCC_FLAGS  = -O3 --std=c++03
-endif
-
 LD_FLAGS    = -lcudart
-EXE	        = sgemm-tiled
-OBJ	        = main.o support.o
+NVCC_FLAGS  = -O3 --std=c++17
+
+EXE         = sgemm-tiled
+OBJ         = main.obj support.obj
 
 default: $(EXE)
 
-main.o: main.cu kernel.cu support.h
+main.obj: main.cu kernel.cu support.h
 	$(NVCC) -c -o $@ main.cu $(NVCC_FLAGS)
 
-support.o: support.cu support.h
+support.obj: support.cu support.h
 	$(NVCC) -c -o $@ support.cu $(NVCC_FLAGS)
 
 $(EXE): $(OBJ)
 	$(NVCC) $(OBJ) -o $(EXE) $(LD_FLAGS)
 
 clean:
-	rm -rf *.o $(EXE)
+	rm -rf *.obj $(EXE)

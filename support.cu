@@ -47,9 +47,8 @@ stopTime(Timer* timer)
 }
 
 float 
-elapsedTime(Timer timer) 
+elapsedTime(Timer timer)
 {
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(
-        timer.endTime - timer.startTime);
-    return duration.count() / 1000.0f; // Convert microseconds to milliseconds
+    auto duration = std::chrono::duration_cast<std::chrono::duration<float>>(timer.endTime - timer.startTime);
+    return duration.count(); // Convert microseconds to seconds
 }

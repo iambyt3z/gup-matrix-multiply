@@ -107,8 +107,8 @@ main (int argc, char *argv[])
     stopTime(&timer); printf("%f s\n", elapsedTime(timer));
     total_time += elapsedTime(timer);
 
-    printf("Total time taken for sgemm...");
-    printf("%f s\n", total_time);
+    printf("\nTotal time taken for sgemm...");
+    printf("%f s\n\n", total_time);
 
     // Verify correctness -----------------------------------------------------
     printf("Verifying results..."); fflush(stdout);
